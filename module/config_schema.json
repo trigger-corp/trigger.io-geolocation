@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "ios": {
+            "required": false,
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "always": {
+                    "required": false,
+                    "type": "boolean",
+                    "description": "Always allow location updates, even when app is in the background (iOS 8 and higher)"
+                }
+            }
+        }
+    }
+}
