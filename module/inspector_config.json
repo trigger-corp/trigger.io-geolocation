@@ -1,0 +1,10 @@
+{
+	"this_module": {
+		"config": {
+			"ios": {
+				"always": true
+			}
+		}
+	},
+	"modules": {}
+}

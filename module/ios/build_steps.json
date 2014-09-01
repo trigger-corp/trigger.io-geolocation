@@ -1,3 +1,11 @@
 [
-        { "do": { "add_ios_system_framework": "CoreLocation.framework" } }
+    { "do": { "add_ios_system_framework": "CoreLocation.framework" } },
+    { "do": { "set_in_info_plist": {
+        "key": "NSLocationWhenInUseUsageDescription",
+        "value": "Your current location can only be logged while you are using this app."
+    } } },
+    { "do": { "set_in_info_plist": {
+        "key": "NSLocationAlwaysUsageDescription",
+        "value": "Your current location can always be logged, even when this app is running in the background."
+    } } }
 ]

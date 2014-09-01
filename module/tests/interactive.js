@@ -27,5 +27,5 @@ asyncTest("Geolocation success", 1, function() {
 			start();
 		});
 	}
-	askQuestion("Allow geolocation, if prompted", runTest, runTest);
+	askQuestion("Allow geolocation, if prompted", { OK: runTest });
 });
