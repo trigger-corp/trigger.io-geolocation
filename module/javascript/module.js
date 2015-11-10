@@ -9,7 +9,7 @@ forge['geolocation'] = {
 				error = two,
 				options = three;
 		}
-		if (forge.is.ios()) {
+		if (forge.is.ios() || forge.is.android()) {
 			forge.internal.call("geolocation.getCurrentPosition", options, success, error);
 		} else if (navigator && "geolocation" in navigator) {
 			return navigator.geolocation.getCurrentPosition(success, error, options);
