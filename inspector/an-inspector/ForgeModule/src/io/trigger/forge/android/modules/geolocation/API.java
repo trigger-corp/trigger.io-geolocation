@@ -1,18 +1,18 @@
 package io.trigger.forge.android.modules.geolocation;
 
-import im.delight.android.location.SimpleLocation;
-import io.trigger.forge.android.core.ForgeApp;
-import io.trigger.forge.android.core.ForgeParam;
 import io.trigger.forge.android.core.ForgeTask;
 
 import com.google.gson.JsonObject;
 
 
 public class API {
-	public static void getCurrentPosition(final ForgeTask task,
-			@ForgeParam("timeout") final int timeout,
-			@ForgeParam("maximumAge") final int maximumAge, 
-			@ForgeParam("enableHighAccuracy") final boolean enableHighAccuracy) {
+	public static void getCurrentPosition(final ForgeTask task) {
+
+		// parse parameters
+		boolean enableHighAccuracy = true;
+		if (task.params.has("enableHighAccuracy")) {
+			enableHighAccuracy = task.params.get("enableHighAccuracy").getAsBoolean();
+		}
 				
 		// check permissions
 		if (!EventListener.location.hasLocationEnabled() || !EventListener.checkPermissions()) {
