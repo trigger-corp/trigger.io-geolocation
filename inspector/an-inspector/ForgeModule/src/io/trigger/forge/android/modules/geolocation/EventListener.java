@@ -13,14 +13,9 @@ public class EventListener extends ForgeEventListener {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		if (!checkPermissions()) {
-			ActivityCompat.requestPermissions(ForgeApp.getActivity(), new String[] {  
-				Manifest.permission.ACCESS_FINE_LOCATION,
-				Manifest.permission.ACCESS_COARSE_LOCATION
-			}, PERMISSIONS_REQUEST);
+		if (checkPermissions()) {
+			location = new SimpleLocation(ForgeApp.getActivity(), true, true);
 		}
-		
-		location = new SimpleLocation(ForgeApp.getActivity(), true, true);
 	}
 
 	public static boolean checkPermissions() {
@@ -30,14 +25,17 @@ public class EventListener extends ForgeEventListener {
 	
 	@Override
 	public void onResume() {
-		location.beginUpdates();
+		if (location != null) {
+			location.beginUpdates();
+		}
 	}
 	
 	@Override
 	public void onPause() {
-		location.endUpdates();
+		if (location != null) {
+			location.endUpdates();
+		}
 	}
 	
 	public static SimpleLocation location;
-	static final int PERMISSIONS_REQUEST = 1;
 }
