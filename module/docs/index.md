@@ -6,13 +6,6 @@ The ``forge.geolocation`` namespace allows you to access fine location data.
 Although geolocation APIs are part of the HTML5 specification, on some
 platforms, the default permissions dialogs can be cumbersome. So we offer an alternative way to get geolocation data.
 
-##Config Options
-
-### iOS
-
-always
-:    Sets whether the iOS Location Manager will receive updates when the app is running in the background. By setting this to `true` the following text will be included in the user permission dialog: "Your current location can always be logged, even when this app is running in the background." If it is set to `false` the text will instead read: "Your current location can only be logged while you are using this app." (iOS 8 or higher) 
-
 
 ##API
 

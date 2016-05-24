@@ -25,13 +25,8 @@
 	
 	// Setup location manager
 	CLLocationManager *locMgr = [[CLLocationManager alloc] init];
-    if ([locMgr respondsToSelector:@selector(requestAlwaysAuthorization)]) { /* iOS 8 */
-        NSDictionary *config = [[ForgeApp sharedApp] configForModule:@"geolocation"];
-        if ([[[config objectForKey:@"ios"] objectForKey:@"always"] boolValue]) {
-            [locMgr requestAlwaysAuthorization];
-        } else {
-            [locMgr requestWhenInUseAuthorization];
-        }
+    if ([locMgr respondsToSelector:@selector(requestWhenInUseAuthorization)]) { /* iOS 8 */
+        [locMgr requestWhenInUseAuthorization];
     }
     
     // Set accuracy
