@@ -1,10 +1,8 @@
 {
-	"this_module": {
-		"config": {
-			"ios": {
-				"always": true
-			}
-		}
-	},
-	"modules": {}
+    "this_module": {
+        "config": {
+            "usage_description": "Usage Description"
+        }
+    },
+    "modules": {}
 }

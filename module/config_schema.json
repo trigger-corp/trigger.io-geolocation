@@ -1,18 +1,12 @@
 {
-	"type": "object",
-	"additionalProperties": false,
-	"properties": {
-		"ios": {
-			"required": false,
-			"type": "object",
-			"additionalProperties": false,
-			"properties": {
-				"always": {
-					"required": false,
-					"type": "boolean",
-					"description": "Always allow location updates, even when app is in the background (Deprecated. No longer supported by App Store rules.)"
-				}
-			}
-		}
-	}
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "usage_description": {
+            "title": "Usage Description",
+            "description": "This key lets you describe the reason your app accesses the user's location when the app is in the foreground.",
+            "type": "string",
+            "required": true
+        }
+    }
 }

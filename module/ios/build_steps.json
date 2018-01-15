@@ -1,7 +1,11 @@
 [
-	{ "do": { "add_ios_system_framework": "CoreLocation.framework" } },
-	{ "do": { "set_in_info_plist": {
-		"key": "NSLocationWhenInUseUsageDescription",
-		"value": "Your current location can only be logged while you are using this app."
-	} } }
+    { "do": { "add_ios_system_framework": "CoreLocation.framework" } },
+    { "do": { "set_in_info_plist": {
+          "key": "NSLocationUsageDescription",
+        "value": "{{modules.geolocation.config.usage_description}}"
+    } } },
+    { "do": { "set_in_info_plist": {
+        "key": "NSLocationWhenInUseUsageDescription",
+        "value": "{{modules.geolocation.config.usage_description}}"
+    } } }
 ]
