@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7177B820212D733600A30EA7 /* JLLocationPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7177B81E212D733600A30EA7 /* JLLocationPermission.m */; };
 		718E954B16B158D200F0464A /* geolocation_API.m in Sources */ = {isa = PBXBuildFile; fileRef = 718E954616B158D200F0464A /* geolocation_API.m */; };
 		718E954C16B158D200F0464A /* geolocation_Delegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 718E954816B158D200F0464A /* geolocation_Delegate.m */; };
 		718E954D16B158D200F0464A /* geolocation_ProximityDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 718E954A16B158D200F0464A /* geolocation_ProximityDelegate.m */; };
@@ -21,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		715B204C1F8D1647004334A9 /* placeholder.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = placeholder.plist; sourceTree = "<group>"; };
+		7177B81E212D733600A30EA7 /* JLLocationPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLLocationPermission.m; sourceTree = "<group>"; };
+		7177B81F212D733600A30EA7 /* JLLocationPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLLocationPermission.h; sourceTree = "<group>"; };
 		718E954516B158D200F0464A /* geolocation_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geolocation_API.h; sourceTree = SOURCE_ROOT; };
 		718E954616B158D200F0464A /* geolocation_API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = geolocation_API.m; sourceTree = SOURCE_ROOT; };
 		718E954716B158D200F0464A /* geolocation_Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geolocation_Delegate.h; sourceTree = SOURCE_ROOT; };
@@ -63,10 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7177B81D212D733600A30EA7 /* JLPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				7177B81E212D733600A30EA7 /* JLLocationPermission.m */,
+				7177B81F212D733600A30EA7 /* JLLocationPermission.h */,
+			);
+			path = JLPermissions;
+			sourceTree = "<group>";
+		};
 		B31B6D4315C13D5200854074 = {
 			isa = PBXGroup;
 			children = (
 				715B204C1F8D1647004334A9 /* placeholder.plist */,
+				7177B81D212D733600A30EA7 /* JLPermissions */,
 				B3E583921627155C00BD59DD /* geolocation */,
 				B31B6D5015C13D5200854074 /* Frameworks */,
 				B31B6D4F15C13D5200854074 /* Products */,
@@ -107,7 +120,6 @@
 				718E954A16B158D200F0464A /* geolocation_ProximityDelegate.m */,
 			);
 			name = geolocation;
-			path = alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718E954B16B158D200F0464A /* geolocation_API.m in Sources */,
+				7177B820212D733600A30EA7 /* JLLocationPermission.m in Sources */,
 				718E954C16B158D200F0464A /* geolocation_Delegate.m in Sources */,
 				718E954D16B158D200F0464A /* geolocation_ProximityDelegate.m in Sources */,
 			);

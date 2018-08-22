@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Trigger Corp. All rights reserved.
 //
 
+#import "JLLocationPermission.h"
+
 #import "geolocation_API.h"
 #import "geolocation_Delegate.h"
 
@@ -44,5 +46,34 @@
     [locMgr startUpdatingLocation];
 }
 
+
++ (void)permissions_check:(ForgeTask*)task permission:(NSString *)permission {
+    JLPermissionsCore* jlpermission = [JLLocationPermission sharedInstance];
+    JLAuthorizationStatus status = [jlpermission authorizationStatus];
+    [task success:[NSNumber numberWithBool:status == JLPermissionAuthorized]];
+}
+
+
++ (void)permissions_request:(ForgeTask*)task permission:(NSString *)permission {
+    JLPermissionsCore* jlpermission = [JLLocationPermission sharedInstance];
+    if ([jlpermission authorizationStatus] == JLPermissionAuthorized) {
+        [task success:[NSNumber numberWithBool:YES]];
+        return;
+    }
+
+    NSDictionary* params = task.params;
+    NSString* rationale = [params objectForKey:@"rationale"];
+    if (rationale != nil) {
+        [jlpermission setRationale:rationale];
+    }
+
+    [jlpermission authorize:^(BOOL granted, NSError * _Nullable error) {
+        [jlpermission setRationale:nil]; // reset rationale
+        if (error) {
+            [ForgeLog d:[NSString stringWithFormat:@"permissions.check '%@' failed with error: %@", permission, error]];
+        }
+        [task success:[NSNumber numberWithBool:granted]];
+    }];
+}
 
 @end
